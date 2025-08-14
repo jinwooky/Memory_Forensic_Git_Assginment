@@ -17,6 +17,39 @@ def read_data(path: str) -> List[int]:
     return nums
 
 
+
+def heap_sort(arr):
+    a = arr[:]  # Copy to preserve original
+    n = len(a)
+
+    # Maintain max-heap property
+    def sift_down(start, end):
+        root = start
+        while True:
+            child = 2 * root + 1  # Left child
+            if child > end:
+                break
+            if child + 1 <= end and a[child] < a[child + 1]:  # Select larger child
+                child += 1
+            if a[root] < a[child]:
+                a[root], a[child] = a[child], a[root]
+                root = child
+            else:
+                break
+
+    # Build max-heap
+    for start in range((n - 2) // 2, -1, -1):
+        sift_down(start, n - 1)
+
+    # Extract elements from heap
+    for end in range(n - 1, 0, -1):
+        a[0], a[end] = a[end], a[0]
+        sift_down(0, end - 1)
+
+    return a
+
+
+
 def main():
     parser = argparse.ArgumentParser(description="정렬 실습: 파일만 넣으면 5개 정렬 모두 실행")
     parser.add_argument("file", nargs="?", default="data.txt", help="데이터 파일 경로 (기본: data.txt)")
