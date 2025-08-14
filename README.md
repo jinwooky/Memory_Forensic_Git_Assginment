@@ -1,5 +1,5 @@
 # Memory_Forensic_Git_Assginment
-# 기능
+## 기능
 - txt 파일 데이터 읽기
 - 정렬 기능
   - 버블 정렬
