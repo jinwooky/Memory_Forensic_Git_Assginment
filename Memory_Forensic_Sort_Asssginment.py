@@ -20,7 +20,7 @@ def quick_sort(arr):
 
 def quick_sort_with_time(arr):
     start_time = time.perf_counter()
-    sorted_arr = quick_sort(arr[:])  # 원본 보호
+    sorted_arr = quick_sort(arr[:])
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
     return sorted_arr, elapsed_time
