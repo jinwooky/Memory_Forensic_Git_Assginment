@@ -26,15 +26,7 @@ def quick_sort_with_time(arr):
     return sorted_arr, elapsed_time
 
 def main():
-    filename = "data.txt"
-    data = read_data(filename)
 
-    for i, row in enumerate(data, start=1):
-        print(f"{i}번 데이터 (정렬 전): {row}")
-        sorted_row, elapsed = quick_sort_with_time(row)
-        print(f"{i}번 데이터 (정렬 후): {sorted_row}")
-        print(f"퀵 정렬 소요 시간: {elapsed:.6f}초")
-        print("-" * 50)
     
 if __name__ == "__main__":
     main()
