@@ -25,6 +25,16 @@ def quick_sort_with_time(arr):
     elapsed_time = end_time - start_time
     return sorted_arr, elapsed_time
 
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
 def main():
 
     
