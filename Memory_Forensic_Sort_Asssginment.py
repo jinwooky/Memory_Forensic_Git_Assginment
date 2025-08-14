@@ -21,15 +21,6 @@ def merge(left, right):
     result.extend(left[i:])
     result.extend(right[j:])
     return result
-
-# 파일에서 데이터 읽기
-with open("data.txt", "r", encoding="utf-8") as f:
-    content = f.read()
-    data = list(map(int, content.split()))  # 공백/줄바꿈 구분 처리
-
-print("정렬 전:", data)
-sorted_data = merge_sort(data)
-print("정렬 후:", sorted_data)
     
 
 if __name__ == "__main__":
